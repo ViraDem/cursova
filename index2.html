@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="index.html">Цікаві місця для подорожей</a></li>
+    <li><a href="index2.html">Цікаві факти про природу</a></li>
+    <li><a href="index3.html">Рослинний світ Карпат</a></li>
+    <li><a href="index4.html">Тваринний світ Карпат</a></li>
+    <li><a href="index5.html">Бонус</a></li>
+ </ul>
+ 
+     <section id="gallery">
+        <h2 class="h2_header">цікаві факти про природу</h2>
+        
+        <!-- Контейнер-карусель -->
+        <div class="carousel-container">
+          <button class="nav prev">&#10094;</button>
+          <div class="carousel-track">
+            <div class="card">
+              <h3>1</h3>
+              <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D1%81%D0%B0%D0%BD" target="_blank">
+                <img src="images/озеро і природа.jfif" width="450" height="450">
+              </a>
+              <p>Якби людина мала таку ж силу, як мураха, вона могла б підіймати вагу від 2 до 5 тонн.</p>
+            </div>
+      
+            <div class="card">
+              <h3>2</h3>
+              <a href="https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0_%D1%87%D0%BE%D1%80%D0%BD%D0%B8%D0%B9" target="_blank">
+                <img src="images/хвиля.jfif" width="450px" height="450px">
+              <p> У 1971 році була зафіксована найбільша хвиля у світі, висота її сягала 85 метрів. Її помітили поряд з японським островом Ішігакі.</p>
+            </div>
+      
+            <div class="card">
+              <h3>3</h3>
+              <a href="https://uk.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BA%D1%83%D1%82" target="_blank">
+            <img src="images/images.jfif" width="450px" height="450px">
+            </a>
+            <p>Найбільший айсберг помітили в 1956 році. Його довжина складала 320 метрів, а ширина – 96 кілометрів. Бельгія має меншу територію.   </p>
+          </div>
+    
+          <div class="card">
+            <h3>4</h3>
+            <a href="https://uk.wikipedia.org/wiki/%D0%9F%D1%83%D0%B3%D0%B0%D1%87" target="_blank">
+              <img src="images/grib-oregona.jpg" width="450px" height="450px">
+            </a>
+            <p>У США, штаті Орегон, є гігантський гриб. Він займає площу в 10 квадратних кілометрів. Вчені вважають, що його вік – 2400 років.</p>
+          </div>
+    
+          <div class="card">
+            <h3>5</h3>
+            <img src="images/завантаження (2).jfif" width="450px" height="450px">
+            </a>
+            <p>В Антарктиді є так звані Сухі долини, де через унікальні погодні умови дощ чи сніг не випадали вже понад 2 мільйони років.</p>
+          </div>
+        </div>
+        <button class="nav next">&#10095;</button>
+      </div>
+    </section>
+    <script>
+        const track = document.querySelector('.carousel-track'); /* отримуємо елемент каруселі (контейнер для карток) */
+        const prevBtn = document.querySelector('.nav.prev'); /* отримуємо кнопку "назад" */
+        const nextBtn = document.querySelector('.nav.next'); /* отримуємо кнопку "вперед" */
+
+        let cardWidth = document.querySelector('.card').offsetWidth; /* визначаємо ширину картки (буде використовуватися для прокрутки) */
+
+        /* додаємо слухач події на кнопку "назад" (кнопка з класом .prev) */
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -cardWidth, behavior: 'smooth' }); /* прокручуємо карусель вліво на ширину картки */
+        });
+
+        /* додаємо слухач події на кнопку "вперед" (кнопка з класом .next) */
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: cardWidth, behavior: 'smooth' }); /* прокручуємо карусель вправо на ширину картки */
+        });
+
+        /* додаємо слухач події на зміну розміру вікна браузера */
+        window.addEventListener('resize', () => {
+            cardWidth = document.querySelector('.card').offsetWidth; /* при зміні розміру вікна знову визначаємо ширину картки */
+        });
+    </script>
+
+
+</body>
+</html>
